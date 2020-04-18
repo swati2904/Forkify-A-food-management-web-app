@@ -3,7 +3,7 @@
 // //import {add as a, mul as m , ID} from './views/searchView';
 // import * as searchView from './views/searchView';
 // //console.log(`Using imported function  ${a(ID, 2)} and ${m(3, 5)}. ${str}`);
-// console.log(`Using imported fnction  ${searchView.add(searchView.ID, 2)} and ${searchView.mul(3, 5)}. ${str}`);
+// console.log(`Using imported function  ${searchView.add(searchView.ID, 2)} and ${searchView.mul(3, 5)}. ${str}`);
 */
 
 import Search from './models/Search';
@@ -185,15 +185,13 @@ const controlList = () => {
 elements.shopping.addEventListener('click', e => {
     const id = e.target.closest('.shopping__item').dataset.itemid;
     
-    console.log("eeee");
-    
     // Handle the delete button
     // return the true false value
     if (e.target.matches('.shopping__delete, .shopping__delete *')) {
         // Delete from state
-        console.log(`list before: ${state.list}`);
+
         state.list.deleteItem(id);
-        console.log(`list after: ${state.list}`);
+       
         // Delete from UI
         listView.deleteItem(id);
 
@@ -277,4 +275,4 @@ elements.recipe.addEventListener('click', e => {
 });
 
 
-//window.l = new List();
+
