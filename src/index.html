@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <title>forkify // Search over 1,000,000 recipes</title>
+    <title>Forkify // Search over 1,000,000 recipes</title>
 </head>
 
 <body>
@@ -16,14 +16,20 @@
         <header class="header">
             <img src="img/logo.png" alt="Logo" class="header__logo">
             <form class="search">
-                <input type="text" class="search__field" placeholder="Search over 1,000,000 recipes..." value="pizza">
+                <input type="text" class="search__field" placeholder="Search recipes like pizza etc..." value="">
                 <button class="btn search__btn">
                     <svg class="search__icon">
                         <use href="img/icons.svg#icon-magnifying-glass"></use>
                     </svg>
                     <span>Search</span>
                 </button>
+
             </form>
+            <span>
+                <a style="text-decoration: none; font-size: 14px; margin-left: -90px;color: orangered;" href="https://forkify-api.herokuapp.com/phrases.html" target="_blank">Useful
+                    searching keywords
+                </a>
+            </span>
             <div class="likes">
                 <div class="likes__field">
                     <svg class="likes__icon">
@@ -32,19 +38,7 @@
                 </div>
                 <div class="likes__panel">
                     <ul class="likes__list">
-                        <!--
-                        <li>
-                            <a class="likes__link" href="#23456">
-                                <figure class="likes__fig">
-                                    <img src="img/test-1.jpg" alt="Test">
-                                </figure>
-                                <div class="likes__data">
-                                    <h4 class="likes__name">Pasta with Tomato ...</h4>
-                                    <p class="likes__author">The Pioneer Woman</p>
-                                </div>
-                            </a>
-                        </li>
-                        -->
+
                     </ul>
                 </div>
             </div>
@@ -205,7 +199,7 @@
 
             <ul class="shopping__list">
             </ul>
-                <!--
+            <!--
                 <li class="shopping__item">
                     <div class="shopping__count">
                         <input type="number" value="500" step="100">
@@ -285,17 +279,16 @@
                     </button>
                 </li>
                 -->
-            
+
 
             <div class="copyright">
-                &copy; by Swati Saxena. Powered by
-                <a href="http://food2fork.com" target="_blank" class="link">Food2Fork.com</a>.
+                &copy; by Swati Saxena.
             </div>
 
         </div>
     </div>
 
-    
+
 </body>
 
 </html>
