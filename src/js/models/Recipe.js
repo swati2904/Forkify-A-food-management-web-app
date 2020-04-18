@@ -14,7 +14,7 @@ export default class Recipe {
             this.img = res.data.recipe.image_url;
             this.url = res.data.recipe.source_url;
             this.ingredients = res.data.recipe.ingredients;
-            // console.log(res);
+
         }
         catch (error) {
             console.log(error);
@@ -46,17 +46,11 @@ export default class Recipe {
 
             // 2. Remove parantheses
             ingredient = ingredient.replace(/ *\([^)]*\) */g, ' ');
-            // console.log(ingredient);
-
 
             //3. parse integradient into count 
             const arrIng = ingredient.split(' ');
             // findIndex fun. is actually we pass te call back fun.
             const unitIndex = arrIng.findIndex(el2 => units.includes(el2));
-
-            // console.log(unitIndex);
-
-            // debugger;
 
             let objIng;
             if (unitIndex > -1) {
@@ -67,19 +61,19 @@ export default class Recipe {
                 // console.log(arrCount)
 
                 let count;
-                if(arrCount.length === 1){
+                if (arrCount.length === 1) {
                     count = eval(arrIng[0].replace('-', '+'));
 
                 } else {
-                    count = eval(arrIng.slice(0,unitIndex).join('+'));
+                    count = eval(arrIng.slice(0, unitIndex).join('+'));
                 }
 
-                
+
 
                 objIng = {
                     count,
                     unit: arrIng[unitIndex],
-                    ingredient: arrIng.slice(unitIndex+1).join(' ')
+                    ingredient: arrIng.slice(unitIndex + 1).join(' ')
                 };
 
             } else if (parseInt(arrIng[0], 10)) {
@@ -113,7 +107,7 @@ export default class Recipe {
 
         // ingredients
         this.ingredients.forEach(ing => {
-            ing.count *=  (newServings / this.servings);
+            ing.count *= (newServings / this.servings);
         });
 
         this.servings = newServings;
